@@ -1,0 +1,44 @@
+
+{% if  tabforamtion is empty%}
+<h1>Tab vide</h1>
+{% else %}
+
+
+
+<table border="1">
+
+
+    <tr>
+        <td>Ref</td>
+        <td>Titre</td>
+        <td>DD</td>
+        <td>date_fin</td>
+        <td>NP</td>
+    </tr>
+
+    {% for f in tabforamtion %}
+
+
+    <tr>
+        <td>{{ f.ref }}</td>
+        <td>{{ f.Titre |upper}}</td>
+        <td>{{ f.date_debut}}</td>
+        <td>{{ f.date_fin }}</td>
+        <td>
+            {{ f.nb_participants }}
+        </td>
+        <td>
+            {% if f.nb_participants ==0 %}
+            <a href="{{ path('app_reservation') }}">Participer</a>
+            {% else %}
+            complet
+            {% endif %}
+            <td>
+    
+    </tr>
+    {%endfor%}
+    {% endif %}
+
+    nbr de formations: {{ tabforamtion|length }}<br>
+    
+    

@@ -1,0 +1,14 @@
+<a href ={{ path('ajouttest') }}>Add</a>
+<br>
+{% for c in tabclub %}
+
+name :{{ c.name}}
+descrption :{{c.Description}}
+addresse :{{c.Addresse}}
+        <a href ="{{ path('uptest',{'id':c.id}) }}">Update</a>
+        <a href ="{{ path('romvetest',{'id':c.id}) }}">Remove</a>
+<br>
+{%endfor%}
+
+
+
